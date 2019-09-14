@@ -1,0 +1,16 @@
+-No existe string en C, está en C++
+-Lo mas parecido a string en C es hacer un array de Char (cadena de caracteres)
+siempre un espacio del char esta ocupado por "\0" que hace que se corte la cadena
+-En el scanf ponemos %s, que indica que estamos pidiendo una cadena de caracteres (s de string supongo)
+-El scanf no sirve para tomar dos palabras porque muestra hasta el primer espacio
+-la funcion especifica para tomar cadenas de caracteres es gets();, recibe una direccion de memoria
+-siempre que usemos una funcion de cadena de caracteres hay que poner la biblioteca #include <string.h>
+-char* representa la constante o puntero a char (investigar mas)
+-strlen devuelve la cantidad de letras de una palabra
+-strcpy(destino,palabra de origen que se va a copiar en destino)
+-strcmp compara dos valores, devuelve -1, 0 o 1 dependiendo si es verdadero (0) o falso (-1 o 1, segun que palabra es mayor en el codigo ASCII)
+esa comparcion se fija tambien en mayusculas o minusculas, a no ser que pongamos esta funcion: stricmp() lo mismo que antes, pero con la i
+sino se puede convertir lo que ingresa el usuario todo a minuscula, o todo a mayuscula
+-strcat sirve para concatenar 
+-strlwr lowercase
+-strupr uppercase
