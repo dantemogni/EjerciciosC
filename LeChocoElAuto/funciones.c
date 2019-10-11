@@ -174,51 +174,43 @@ void ingresoVehiculo(eVehiculo vehiculos[], int cantidad)
 
 void egresoVehiculo(eVehiculo vehiculos[], int cantidad)
 {
-    int i;
-    int auxHoraSalida[cantidad];
-    char auxPatente[cantidad][10];
-    int encontrar;
+    int auxHoraSalida;
+    char auxPatente[10];
+    // int encontrar;
 
     printf("// Ingresar una patente: ...\n");
     fflush(stdin);
-    gets(auxPatente);
+    scanf("%s", auxPatente);
+    int indiceVehiculoEncontrado = encontrarVehiculo(vehiculos, cantidad, auxPatente);
 
-
-     if(encontrarVehiculo(vehiculos, cantidad, auxPatente) == -1)
+     if(indiceVehiculoEncontrado == -1)
         {
             printf("\nERROR\n");
         }  else  {
         printf("// Ingresar hora de salida: ...\n");
         scanf("%d", &auxHoraSalida);
-        for(i=0; i<cantidad; i++)
+        for(int i=0; i<cantidad; i++)
         {
-           vehiculos[i].horaSalida = auxHoraSalida[i];
+           vehiculos[indiceVehiculoEncontrado].horaSalida = auxHoraSalida;
         }
         mostrarVehiculos(vehiculos, cantidad);
     }
 }
 
-int encontrarVehiculo(eVehiculo vehiculos[], int cantidad, int valor)
+int encontrarVehiculo(eVehiculo vehiculos[], int cantidad, char valor[10])
 {
-    int i;
-    for(i=0; i<cantidad; i++)
+    for(int i=0; i<cantidad; i++)
     {
-        if(strcmp(vehiculos[i].patente, valor)==0)
-        {
-            return 0;
-        }
-        else
-        {
-            return -1;
-        }
+        if (strcmp(vehiculos[i].patente, valor)==0)
+            return i;
     }
+    return -1;
 }
 
 void mostrarVehiculos(eVehiculo vehiculos[], int cantidad)
 {
-    int i;
     printf("\nID\tPATENTE\tF. DE ENTRADA\tH. DE ENTRADA\tH. SALIDA\n");
-    for(i=0; i<cantidad; i++)
+    for(int i=0; i<cantidad; i++)
     {
         printf("%d\t%s\t%d/%d/%d\t%d\t\t%d\n",
                vehiculos[i].idPropietario.idPropietario,

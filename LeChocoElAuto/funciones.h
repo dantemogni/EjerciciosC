@@ -28,5 +28,5 @@ void modificarPropietario(ePropietario[], int);
 void eliminarPersonas(ePropietario[], int);
 void ingresoVehiculo(eVehiculo[], int);
 void egresoVehiculo(eVehiculo[], int);
-int encontrarVehiculo(eVehiculo[], int, int);
+int encontrarVehiculo(eVehiculo[], int, char[10]);
 void mostrarVehiculos(eVehiculo[], int);
