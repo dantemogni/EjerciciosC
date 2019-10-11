@@ -14,7 +14,7 @@ typedef struct
 
 typedef struct
 {
-    int patente;
+    char patente[10];
     eFecha fechaIngreso;
     int horaEntrada;
     int horaSalida;
@@ -23,8 +23,10 @@ typedef struct
 
 void menu(ePropietario[], eVehiculo[], int);
 void cargaPropietarios(ePropietario[], int);
-void mostrarDatos(ePropietario[], int);
+void mostrarPropietarios(ePropietario[], int);
 void modificarPropietario(ePropietario[], int);
 void eliminarPersonas(ePropietario[], int);
 void ingresoVehiculo(eVehiculo[], int);
+void egresoVehiculo(eVehiculo[], int);
+int encontrarVehiculo(eVehiculo[], int, int);
 void mostrarVehiculos(eVehiculo[], int);

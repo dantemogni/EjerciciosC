@@ -5,41 +5,48 @@
 void menu(ePropietario propietarios[], eVehiculo vehiculos[], int cantidad)
 {
     int opciones;
-    do {
-    printf("\n****ESTACIONAMIENTO****\n");
-    printf("\n1 - INGRESO PERSONAS\n2 - ELIMINAR PERSONAS\n3 - MODIFICAR PERSONAS\n4 - INGRESAR VEHICULO\n\n");
-    scanf("%d", &opciones);
-    switch(opciones)
+    do
     {
-    case 1:
-        system("cls");
-        printf("\nINGRESO PERSONAS\n");
-        cargaPropietarios(propietarios, cantidad);
-        mostrarPropietarios(propietarios, cantidad);
-        break;
-    case 2:
-        system("cls");
-        printf("\nELIMINAR PERSONAS\n");
-        eliminarPersonas(propietarios, cantidad);
-        mostrarPropietarios(propietarios, cantidad);
-        break;
-    case 3:
-        system("cls");
-        printf("\nMODIFICAR PERSONAS\n");
-        modificarPropietario(propietarios, cantidad);
-        mostrarPropietarios(propietarios, cantidad);
-        break;
-    case 4:
-        system("cls");
-        printf("\nINGRESAR VEHICULO\n");
-        ingresoVehiculo(vehiculos, cantidad);
-        mostrarVehiculos(vehiculos, cantidad);
-        break;
-    }
+        printf("\n****ESTACIONAMIENTO****\n");
+        printf("\n1 - INGRESO PERSONAS\n2 - ELIMINAR PERSONAS\n3 - MODIFICAR PERSONAS\n4 - INGRESAR VEHICULO\n5 - EGRESO VEHICULO\n\n");
+        scanf("%d", &opciones);
+        switch(opciones)
+        {
+        case 1:
+            system("cls");
+            printf("\nINGRESO PERSONAS\n");
+            cargaPropietarios(propietarios, cantidad);
+            mostrarPropietarios(propietarios, cantidad);
+            break;
+        case 2:
+            system("cls");
+            printf("\nELIMINAR PERSONAS\n");
+            eliminarPersonas(propietarios, cantidad);
+            mostrarPropietarios(propietarios, cantidad);
+            break;
+        case 3:
+            system("cls");
+            printf("\nMODIFICAR PERSONAS\n");
+            modificarPropietario(propietarios, cantidad);
+            mostrarPropietarios(propietarios, cantidad);
+            break;
+        case 4:
+            system("cls");
+            printf("\nINGRESAR VEHICULO\n");
+            ingresoVehiculo(vehiculos, cantidad);
+            mostrarVehiculos(vehiculos, cantidad);
+            break;
+        case 5:
+            system("cls");
+            printf("\nEGRESO VEHICULO\n");
+            egresoVehiculo(vehiculos, cantidad);
+            break;
+        }
         printf("\n\n");
         system("pause");
         system("cls");
-    } while(opciones!=-1);
+    }
+    while(opciones!=-1);
     //FALTA INICIALIZAR EN -1 PARA MOSTRAR QUE ESTAN VACIOS
 }
 
@@ -73,12 +80,12 @@ void mostrarPropietarios(ePropietario propietarios[], int cantidad)
     {
         if(propietarios[i].idPropietario!=-1)
         {
-        printf("%d\t%s\t%d/%d/%d\n",
-               propietarios[i].idPropietario,
-               propietarios[i].nombre,
-               propietarios[i].fechaNacimiento.dia,
-               propietarios[i].fechaNacimiento.mes,
-               propietarios[i].fechaNacimiento.anio);
+            printf("%d\t%s\t%d/%d/%d\n",
+                   propietarios[i].idPropietario,
+                   propietarios[i].nombre,
+                   propietarios[i].fechaNacimiento.dia,
+                   propietarios[i].fechaNacimiento.mes,
+                   propietarios[i].fechaNacimiento.anio);
         }
     }
 }
@@ -133,11 +140,13 @@ void eliminarPersonas(ePropietario propietarios[], int cantidad)
 void ingresoVehiculo(eVehiculo vehiculos[], int cantidad)
 {
     int i;
-    char hardPatente [][20] = {"AAA111", "BBB222", "CCC333"};
+    char hardPatente [][10] = {"AAA111", "BBB222", "CCC333"};
     int hardDia[] = {15,6,20};
     int hardMes[] = {3,8,11};
     int hardAnio = 2019;
     int hardHoraIngreso[] = {10,11,15};
+    int hardId[] = {1,2,2};
+    int hardHoraSalida = {0};
     //int indice;
 
     printf("// Ingresar una patente: ...\n");
@@ -150,28 +159,75 @@ void ingresoVehiculo(eVehiculo vehiculos[], int cantidad)
     //fflush(stdin);
     //scanf("%d", &indice);
 
-    for(i=0;i<cantidad;i++)
+    for(i=0; i<cantidad; i++)
     {
         vehiculos[i].fechaIngreso.dia = hardDia[i];
         vehiculos[i].fechaIngreso.mes = hardMes[i];
         vehiculos[i].fechaIngreso.anio = hardAnio;
         vehiculos[i].horaEntrada = hardHoraIngreso[i];
+        vehiculos[i].idPropietario.idPropietario = hardId[i];
         strcpy(vehiculos[i].patente,hardPatente[i]);
+        vehiculos[i].horaSalida = hardHoraSalida;
     }
 
 }
+
+void egresoVehiculo(eVehiculo vehiculos[], int cantidad)
+{
+    int i;
+    int auxHoraSalida[cantidad];
+    char auxPatente[cantidad][10];
+    int encontrar;
+
+    printf("// Ingresar una patente: ...\n");
+    fflush(stdin);
+    gets(auxPatente);
+
+
+     if(encontrarVehiculo(vehiculos, cantidad, auxPatente) == -1)
+        {
+            printf("\nERROR\n");
+        }  else  {
+        printf("// Ingresar hora de salida: ...\n");
+        scanf("%d", &auxHoraSalida);
+        for(i=0; i<cantidad; i++)
+        {
+           vehiculos[i].horaSalida = auxHoraSalida[i];
+        }
+        mostrarVehiculos(vehiculos, cantidad);
+    }
+}
+
+int encontrarVehiculo(eVehiculo vehiculos[], int cantidad, int valor)
+{
+    int i;
+    for(i=0; i<cantidad; i++)
+    {
+        if(strcmp(vehiculos[i].patente, valor)==0)
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+}
+
 void mostrarVehiculos(eVehiculo vehiculos[], int cantidad)
 {
     int i;
-    printf("\nID\tPATENTE\tF. DE ENTRADA\tH. DE ENTRADA\n");
+    printf("\nID\tPATENTE\tF. DE ENTRADA\tH. DE ENTRADA\tH. SALIDA\n");
     for(i=0; i<cantidad; i++)
     {
-        printf("%d\t%s\t%d/%d/%d\t%d\n",
+        printf("%d\t%s\t%d/%d/%d\t%d\t\t%d\n",
                vehiculos[i].idPropietario.idPropietario,
                vehiculos[i].patente,
                vehiculos[i].fechaIngreso.dia,
                vehiculos[i].fechaIngreso.mes,
                vehiculos[i].fechaIngreso.anio,
-               vehiculos[i].horaEntrada);
+               vehiculos[i].horaEntrada,
+               vehiculos[i].horaSalida);
     }
 }
+

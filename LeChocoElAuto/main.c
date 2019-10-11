@@ -6,7 +6,6 @@
 int main()
 {
     eVehiculo vehiculos[CANT];
-    eFecha fecha[CANT];
     ePropietario propietarios[CANT];
     menu(propietarios, vehiculos, CANT);
     return 0;
