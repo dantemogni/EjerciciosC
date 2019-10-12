@@ -189,10 +189,10 @@ void egresoVehiculo(eVehiculo vehiculos[], int cantidad)
         }  else  {
         printf("// Ingresar hora de salida: ...\n");
         scanf("%d", &auxHoraSalida);
-        for(int i=0; i<cantidad; i++)
-        {
+        //for(int i=0; i<cantidad; i++)
+        //{
            vehiculos[indiceVehiculoEncontrado].horaSalida = auxHoraSalida;
-        }
+        //}
         mostrarVehiculos(vehiculos, cantidad);
     }
 }
