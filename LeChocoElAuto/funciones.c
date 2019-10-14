@@ -58,10 +58,10 @@ void menu(ePropietario propietarios[], eVehiculo vehiculos[], int cantidad)
 void cargaPropietarios(ePropietario propietarios[], int cantidad)
 {
     int i;
-    char hardNombres [][10] = {"Maria", "Juan", "Dante"};
-    int hardDia[] = {31,17,26};
-    int hardMes[] = {03,01,10};
-    int hardAnio = 2019;
+    char hardNombres [][10] = {"Maria", "Juan", "Dante", "Maria", "Pepe"};
+    int hardDia[] = {31,17,26,5,7};
+    int hardMes[] = {03,01,10,5,6};
+    int hardAnio = {2000,1987,1980,1993,1965};
 
     printf("// Ingresar un propietario: ...\n");
     //scanf
@@ -72,7 +72,7 @@ void cargaPropietarios(ePropietario propietarios[], int cantidad)
     {
         propietarios[i].fechaNacimiento.dia = hardDia[i];
         propietarios[i].fechaNacimiento.mes = hardMes[i];
-        propietarios[i].fechaNacimiento.anio = hardAnio;
+        propietarios[i].fechaNacimiento.anio = hardAnio[i];
         strcpy(propietarios[i].nombre,hardNombres[i]);
         propietarios[i].idPropietario = i+1;
     }
@@ -163,12 +163,12 @@ void eliminarPersonas(ePropietario propietarios[], int cantidad)
 void ingresoVehiculo(eVehiculo vehiculos[], int cantidad)
 {
     int i;
-    char hardPatente [][10] = {"BBB222", "AAA111", "CCC333"};
-    int hardDia[] = {15,6,20};
-    int hardMes[] = {3,8,11};
+    char hardPatente [][10] = {"BBB222", "AAA111", "CCC333", "DDD444", "EEE555"};
+    int hardDia[] = {15,6,20,24,13};
+    int hardMes[] = {3,8,11,1,4};
     int hardAnio = 2019;
-    int hardHoraIngreso[] = {10,11,15};
-    int hardId[] = {1,2,2};
+    int hardHoraIngreso[] = {10,11,15,14,11};
+    int hardId[] = {1,2,2,3,5};
     int hardHoraSalida = {0};
 
     printf("// Ingresar una patente: ...\n");
@@ -282,7 +282,7 @@ void ordenarPropietarios(ePropietario propietarios[], int cantidad)
     {
         for(j=i+1;j<cantidad;j++)
         {
-            if((propietarios[i].nombre>propietarios[j].nombre)|| // NO ORDENA POR NOMBRE
+            if((propietarios[i].nombre>propietarios[j].nombre)&& // NO ORDENA POR NOMBRE
                (propietarios[i].fechaNacimiento.anio>propietarios[j].fechaNacimiento.anio)||
                (propietarios[i].fechaNacimiento.mes>propietarios[j].fechaNacimiento.mes)||
                (propietarios[i].fechaNacimiento.dia>propietarios[j].fechaNacimiento.dia))
@@ -316,7 +316,7 @@ void ordenarVehiculos(eVehiculo vehiculos[],int cantidad) /* NO ORDENADO POR DUE
 {
     int i;
     int j;
-    char auxPatente[cantidad][10]; //los auxiliares son temporales para guardar el dato que se esta moviendo
+    char auxPatente[10]; //los auxiliares son temporales para guardar el dato que se esta moviendo
     int auxID;
     int auxAnio;
     int auxDia;
