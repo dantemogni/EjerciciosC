@@ -8,7 +8,7 @@ void menu(ePropietario propietarios[], eVehiculo vehiculos[], int cantidad)
     do
     {
         printf("\n****ESTACIONAMIENTO****\n");
-        printf("\n1 - INGRESO PERSONAS\n2 - ELIMINAR PERSONAS\n3 - MODIFICAR PERSONAS\n4 - INGRESAR VEHICULO\n5 - EGRESO VEHICULO\n\n");
+        printf("\n1 - INGRESO PERSONAS\n2 - ELIMINAR PERSONAS\n3 - MODIFICAR PERSONAS\n4 - INGRESAR VEHICULO\n5 - EGRESO VEHICULO\n6 - INFORMAR\n\n");
         scanf("%d", &opciones);
         switch(opciones)
         {
@@ -41,6 +41,11 @@ void menu(ePropietario propietarios[], eVehiculo vehiculos[], int cantidad)
             printf("\nEGRESO VEHICULO\n");
             egresoVehiculo(vehiculos, cantidad);
             break;
+        case 6:
+            system("cls");
+            printf("\nINFORMAR\n");
+            informar(propietarios, vehiculos, cantidad);
+            break;
         }
         printf("\n\n");
         system("pause");
@@ -53,9 +58,9 @@ void menu(ePropietario propietarios[], eVehiculo vehiculos[], int cantidad)
 void cargaPropietarios(ePropietario propietarios[], int cantidad)
 {
     int i;
-    char hardNombres [][20] = {"Dante", "Juan", "Maria"};
-    int hardDia[] = {01,17,26};
-    int hardMes[] = {02,06,10};
+    char hardNombres [][10] = {"Maria", "Juan", "Dante"};
+    int hardDia[] = {31,17,26};
+    int hardMes[] = {03,01,10};
     int hardAnio = 2019;
 
     printf("// Ingresar un propietario: ...\n");
@@ -92,16 +97,21 @@ void mostrarPropietarios(ePropietario propietarios[], int cantidad)
 
 void modificarPropietario(ePropietario propietarios[], int cantidad)
 {
-    int auxID; // VER DE MODIFICAR PARA QUE SEA MAS ACERTADO
+    int auxID;
     char auxNombre[10];
     int auxDia;
     int auxMes;
     int auxAnio;
     int menuModificar;
+    int indiceEncontrarPropietario;
+
     mostrarPropietarios(propietarios, cantidad);
     printf("\nIngrese el ID del propietario a modificar: ");
     scanf("%d", &auxID);
-    auxID = auxID - 1;
+
+    indiceEncontrarPropietario = encontrarPropietario(propietarios, cantidad, auxID);
+
+    //auxID = auxID - 1;
     printf("Que desea modificar?\n 1 - NOMBRE\n 2 - FECHA DE NACIMIENTO\n");
     scanf("%d", &menuModificar);
     switch(menuModificar)
@@ -110,7 +120,7 @@ void modificarPropietario(ePropietario propietarios[], int cantidad)
         printf("Ingrese el nombre: ");
         fflush(stdin);
         gets(auxNombre);
-        strcpy(propietarios[auxID].nombre, auxNombre);
+        strcpy(propietarios[indiceEncontrarPropietario].nombre, auxNombre);
         break;
     case 2:
         printf("Ingrese el dia: ");
@@ -122,32 +132,44 @@ void modificarPropietario(ePropietario propietarios[], int cantidad)
         printf("Ingrese el anio: ");
         fflush(stdin);
         scanf("%d", &auxAnio);
-        propietarios[auxID].fechaNacimiento.anio = auxAnio;
-        propietarios[auxID].fechaNacimiento.mes = auxMes;
-        propietarios[auxID].fechaNacimiento.dia = auxDia;
+        propietarios[indiceEncontrarPropietario].fechaNacimiento.anio = auxAnio;
+        propietarios[indiceEncontrarPropietario].fechaNacimiento.mes = auxMes;
+        propietarios[indiceEncontrarPropietario].fechaNacimiento.dia = auxDia;
         break;
     }
 }
+
+int encontrarPropietario(ePropietario propietarios[], int cantidad, int valor)
+{
+    for(int i=0; i<cantidad; i++)
+    {
+        if (propietarios[i].idPropietario==valor)
+            return i;
+    }
+    return -1;
+}
+
+
 void eliminarPersonas(ePropietario propietarios[], int cantidad)
 {
     int auxID;
+    int indiceEncontrarPropietario;
     mostrarPropietarios(propietarios, cantidad);
     printf("\n\nIngrese el ID del propietario a eliminar: ");
     scanf("%d", &auxID);
-    auxID = auxID - 1; // LO MISMO QUE EN MODIFICAR PERSONAS
-    propietarios[auxID].idPropietario = -1;
+    indiceEncontrarPropietario = encontrarPropietario(propietarios, cantidad, auxID);
+    propietarios[indiceEncontrarPropietario].idPropietario = -1;
 }
 void ingresoVehiculo(eVehiculo vehiculos[], int cantidad)
 {
     int i;
-    char hardPatente [][10] = {"AAA111", "BBB222", "CCC333"};
+    char hardPatente [][10] = {"BBB222", "AAA111", "CCC333"};
     int hardDia[] = {15,6,20};
     int hardMes[] = {3,8,11};
     int hardAnio = 2019;
     int hardHoraIngreso[] = {10,11,15};
     int hardId[] = {1,2,2};
     int hardHoraSalida = {0};
-    //int indice;
 
     printf("// Ingresar una patente: ...\n");
     //scanf
@@ -165,7 +187,7 @@ void ingresoVehiculo(eVehiculo vehiculos[], int cantidad)
         vehiculos[i].fechaIngreso.mes = hardMes[i];
         vehiculos[i].fechaIngreso.anio = hardAnio;
         vehiculos[i].horaEntrada = hardHoraIngreso[i];
-        vehiculos[i].idPropietario.idPropietario = hardId[i];
+        vehiculos[i].idPropietario.idPropietario = hardId[i]; /* PENSAR MEJOR ESTO, DEBE ESTAR MAL */
         strcpy(vehiculos[i].patente,hardPatente[i]);
         vehiculos[i].horaSalida = hardHoraSalida;
     }
@@ -174,51 +196,39 @@ void ingresoVehiculo(eVehiculo vehiculos[], int cantidad)
 
 void egresoVehiculo(eVehiculo vehiculos[], int cantidad)
 {
-    int i;
-    int auxHoraSalida[cantidad];
-    char auxPatente[cantidad][10];
-    int encontrar;
+    int auxHoraSalida;
+    char auxPatente[10];
 
     printf("// Ingresar una patente: ...\n");
     fflush(stdin);
-    gets(auxPatente);
+    scanf("%s", auxPatente);
+    int indiceVehiculoEncontrado = encontrarVehiculo(vehiculos, cantidad, auxPatente);
 
-
-     if(encontrarVehiculo(vehiculos, cantidad, auxPatente) == -1)
+     if(indiceVehiculoEncontrado == -1)
         {
             printf("\nERROR\n");
         }  else  {
         printf("// Ingresar hora de salida: ...\n");
         scanf("%d", &auxHoraSalida);
-        for(i=0; i<cantidad; i++)
-        {
-           vehiculos[i].horaSalida = auxHoraSalida[i];
-        }
+        vehiculos[indiceVehiculoEncontrado].horaSalida = auxHoraSalida; // indiceVehiculoEncontrado es el i del vehiculo encontrado
         mostrarVehiculos(vehiculos, cantidad);
     }
 }
 
-int encontrarVehiculo(eVehiculo vehiculos[], int cantidad, int valor)
+int encontrarVehiculo(eVehiculo vehiculos[], int cantidad, char valor[10])
 {
-    int i;
-    for(i=0; i<cantidad; i++)
+    for(int i=0; i<cantidad; i++)
     {
-        if(strcmp(vehiculos[i].patente, valor)==0)
-        {
-            return 0;
-        }
-        else
-        {
-            return -1;
-        }
+        if (strcmp(vehiculos[i].patente, valor)==0)
+            return i; // devuelve el valor de i en donde se encontró
     }
+    return -1;
 }
 
 void mostrarVehiculos(eVehiculo vehiculos[], int cantidad)
 {
-    int i;
-    printf("\nID\tPATENTE\tF. DE ENTRADA\tH. DE ENTRADA\tH. SALIDA\n");
-    for(i=0; i<cantidad; i++)
+    printf("\nID\tPATENTE\tF. DE ENTRADA\tH. DE ENTRADA\tH. SALIDA\n"); /* QUE MUESTRE EL DUENIO DEL AUTO !! */
+    for(int i=0; i<cantidad; i++)
     {
         printf("%d\t%s\t%d/%d/%d\t%d\t\t%d\n",
                vehiculos[i].idPropietario.idPropietario,
@@ -230,4 +240,138 @@ void mostrarVehiculos(eVehiculo vehiculos[], int cantidad)
                vehiculos[i].horaSalida);
     }
 }
+void informar(ePropietario propietarios[], eVehiculo vehiculos[], int cantidad)
+{
+    int opcion;
+    printf("\n1 - Todos las propietarios ordenados por nombre y anio de nacimiento.\n");
+    printf("2 - Todos los vehiculos ordenados por duenio y patente.\n");
+    printf("3 - Cada auto con el nombre de su duenio.\n");
+    printf("4 - Por cada duenio los autos que tiene estacionados.\n");
+    printf("5 - Ingresar un duenio y mostrar todos sus autos.\n");
+    printf("6 - Mostrar el total de la estadia de cada auto, sabiendo que el valor hora es $100.\n");
+    printf("7 - Mostrar cuanto debera pagar cada duenio por todos sus autos estacionados.\n");
+    printf("8 - Mostrar el/los duenios con mas autos estacionados.\n\n");
+    scanf("%d", &opcion);
+    switch(opcion)
+    {
+    case 1:
+        ordenarPropietarios(propietarios, cantidad);
+        mostrarPropietarios(propietarios, cantidad);
+        break;
+    case 2:
+        ordenarVehiculos(vehiculos, cantidad);
+        mostrarVehiculos(vehiculos, cantidad);
+        break;
+    case 6:
+        valorEstadia(vehiculos,cantidad);
+        break;
+    }
+}
 
+void ordenarPropietarios(ePropietario propietarios[], int cantidad)
+{
+    int i;
+    int j;
+    char auxNombre[10];
+    int auxID;
+    int auxAnio;
+    int auxDia;
+    int auxMes;
+    //int indiceAuxNombre;
+
+    //for (indiceAuxNombre=0; indiceAuxNombre<cantidad; indiceAuxNombre++) {
+    for(i=0;i<cantidad-1;i++)
+    {
+        for(j=i+1;j<cantidad;j++)
+        {
+            if((propietarios[i].nombre>propietarios[j].nombre)|| // NO ORDENA POR NOMBRE
+               (propietarios[i].fechaNacimiento.anio>propietarios[j].fechaNacimiento.anio)||
+               (propietarios[i].fechaNacimiento.mes>propietarios[j].fechaNacimiento.mes)||
+               (propietarios[i].fechaNacimiento.dia>propietarios[j].fechaNacimiento.dia))
+            {
+                auxID = propietarios[i].idPropietario;
+                propietarios[i].idPropietario = propietarios[j].idPropietario;
+                propietarios[j].idPropietario = auxID;
+
+                auxAnio = propietarios[i].fechaNacimiento.anio;
+                propietarios[i].fechaNacimiento.anio = propietarios[j].fechaNacimiento.anio;
+                propietarios[j].fechaNacimiento.anio = auxAnio;
+
+                auxDia = propietarios[i].fechaNacimiento.dia;
+                propietarios[i].fechaNacimiento.dia = propietarios[j].fechaNacimiento.dia;
+                propietarios[j].fechaNacimiento.dia = auxDia;
+
+                auxMes = propietarios[i].fechaNacimiento.mes;
+                propietarios[i].fechaNacimiento.mes = propietarios[j].fechaNacimiento.mes;
+                propietarios[j].fechaNacimiento.mes = auxMes;
+
+                strcpy(auxNombre, propietarios[i].nombre);
+                strcpy(propietarios[i].nombre, propietarios[j].nombre);
+                strcpy(propietarios[j].nombre, auxNombre);
+            }
+        }
+    }
+    //}
+}
+
+void ordenarVehiculos(eVehiculo vehiculos[],int cantidad) /* NO ORDENADO POR DUENIO !!!!! */
+{
+    int i;
+    int j;
+    char auxPatente[cantidad][10]; //los auxiliares son temporales para guardar el dato que se esta moviendo
+    int auxID;
+    int auxAnio;
+    int auxDia;
+    int auxMes;
+    int auxHoraEntrada;
+    int auxHoraSalida;
+
+    for(i=0;i<cantidad-1;i++) // cantidad-1 porque cuando se ordenan, el ultimo ya queda ordenado de por si junto con el ordenamiento gral.
+    {
+        for(j=i+1;j<cantidad;j++)
+        {
+            if(vehiculos[i].patente>vehiculos[j].patente) // si no se cumple el if, pasa de nuevo a la interacion del FOR
+            {
+                auxID = vehiculos[i].idPropietario.idPropietario;
+                vehiculos[i].idPropietario.idPropietario = vehiculos[j].idPropietario.idPropietario;
+                vehiculos[j].idPropietario.idPropietario = auxID;
+
+                auxAnio = vehiculos[i].fechaIngreso.anio;
+                vehiculos[i].fechaIngreso.anio = vehiculos[j].fechaIngreso.anio;
+                vehiculos[j].fechaIngreso.anio = auxAnio;
+
+                auxDia = vehiculos[i].fechaIngreso.dia;
+                vehiculos[i].fechaIngreso.dia = vehiculos[j].fechaIngreso.dia;
+                vehiculos[j].fechaIngreso.dia = auxDia;
+
+                auxMes = vehiculos[i].fechaIngreso.mes;
+                vehiculos[i].fechaIngreso.mes = vehiculos[j].fechaIngreso.mes;
+                vehiculos[j].fechaIngreso.mes = auxMes;
+
+                strcpy(auxPatente, vehiculos[i].patente);
+                strcpy(vehiculos[i].patente, vehiculos[j].patente);
+                strcpy(vehiculos[j].patente, auxPatente);
+            }
+        }
+    }
+}
+int diferencia(eVehiculo vehiculos[], int cantidad)
+{
+    int i;
+    int resultado;
+    for(i=0;i<cantidad;i++)
+    {
+        resultado = vehiculos[i].horaSalida - vehiculos[i].horaEntrada;
+    }
+    return resultado;
+}
+
+void valorEstadia(eVehiculo vehiculos[], int cantidad)
+{
+    int i;
+    mostrarVehiculos(vehiculos, cantidad);
+    for(i=0; i<cantidad; i++)
+    {
+        printf("\n%s: %d", vehiculos[i].patente, diferencia(vehiculos, cantidad));
+    }
+}
