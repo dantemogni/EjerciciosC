@@ -10,7 +10,7 @@
 
 1571105079 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\funciones.h
 
-1571105079 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\funciones.c
+1571182746 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
@@ -29,7 +29,7 @@
 	"entidadEquipos.h"
 	<string.h>
 
-1571104542 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadjugadores.c
+1571182685 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadjugadores.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"

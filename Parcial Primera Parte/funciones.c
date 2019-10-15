@@ -10,6 +10,10 @@
 void subMenuListar(eEquipos[], eJugadores[], eReferi[], ePartido[], int);
 void listarJugadoresPorEquipo(eEquipos[], eJugadores[], int);
 void informarReferi(eReferi[], ePartido[], int);
+void ingresarNombre(eJugadores[], eEquipos[], int);
+int encontrarNombre(eJugadores[], int, char[]);
+
+
 
 void menuEntidades(eEquipos equipos[], eJugadores jugadores[], eReferi referis[], ePartido partidos[], int cantidad)
 {
@@ -54,7 +58,7 @@ void subMenuListar(eEquipos equipos[], eJugadores jugadores[], eReferi referis[]
 {
     int opciones;
     printf("\n***LISTAR E INFORMAR***\n");
-    printf("1 - LISTAR JUGADORES POR EQUIPO\n2 - INFORMAR EL REFERI QUE MAS PARTIDOS DIRIGIO\n");
+    printf("1 - LISTAR JUGADORES POR EQUIPO\n2 - INFORMAR EL REFERI QUE MAS PARTIDOS DIRIGIO\n3 - INGRESAR UN NOMBRE Y LISTAR\n");
     printf("Que desea hacer? ");
     scanf("%d", &opciones);
     switch(opciones)
@@ -64,6 +68,9 @@ void subMenuListar(eEquipos equipos[], eJugadores jugadores[], eReferi referis[]
         break;
     case 2:
         informarReferi(referis, partidos, cantidad);
+        break;
+    case 3:
+        ingresarNombre(jugadores, equipos, cantidad);
         break;
     }
 
@@ -122,4 +129,37 @@ void informarReferi(eReferi referis[], ePartido partidos[], int cantidad)
         nombreReferiMax,
         apellidoReferiMax);
 }
+void ingresarNombre(eJugadores jugadores[], eEquipos equipos[], int cantidad)
+{
+    char auxNombre[51];
+    printf("Ingrese el nombre del jugador: ");
+    fflush(stdin);
+    gets(auxNombre);
+    int indiceEquipo;
+    int indiceJugadores;
 
+    int indiceEncontrarNombre = encontrarNombre(jugadores, cantidad, auxNombre); // TIENE QUE BUSCAR MÁS DE UNA COINDICENCIA
+
+
+    for(indiceJugadores=0; indiceJugadores<cantidad; indiceJugadores++)
+    {
+        printf("Jugador: %s %s", jugadores[indiceEncontrarNombre].nombreJugador,
+                                 jugadores[indiceEncontrarNombre].apellidoJugador);
+
+        for(indiceEquipo=0; indiceEquipo<cantidad; indiceEquipo++) // ME REPITE LOS EQUIPOS 5 VECES --> MAL
+        {
+           if(jugadores[indiceEncontrarNombre].codigoEquipo == equipos[indiceEquipo].codigoEquipo)
+           printf("\tEquipo: %s\n", equipos[indiceEquipo].nombre);
+        }
+    }
+}
+
+int encontrarNombre(eJugadores jugadores[], int cantidad, char valor[])
+{
+    for(int i=0; i<cantidad; i++)
+    {
+        if (strcmp(jugadores[i].nombreJugador, valor)== 0)
+            return i;
+    }
+    return -1;
+}

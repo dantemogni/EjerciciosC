@@ -31,7 +31,7 @@ void subMenuJugadores(eJugadores jugadores[], int cantidad)
 void cargaJugadores(eJugadores jugadores[], int cantidad)
 {
     int i;
-    char hardNombres [][51] = {"Mauricio", "Oscar", "Juan", "Leandro", "Alejo"};
+    char hardNombres [][51] = {"Mauricio", "Oscar", "Juan", "Oscar", "Alejo"};
     char hardApellido [][51] = {"Oca", "Valle", "Gomez", "Lopez", "Valle"};
     char hardSexo = 'm';
     int hardCodigoEquipo [] = {2,4,3,1,2};
@@ -56,7 +56,7 @@ void cargaJugadores(eJugadores jugadores[], int cantidad)
 void mostrarJugadores(eJugadores jugadores[], int cantidad)
 {
     int i;
-    printf("\n\tCODIGO\t\tNOMBRE\t\tAPELLIDO\tSEXO\n");
+    printf("\n\tCODIGO\t\tAPELLIDO\tNOMBRE\t\tSEXO\n");
     for(i=0; i<cantidad; i++)
     {
         if(jugadores[i].codigoJugador!=-1)
