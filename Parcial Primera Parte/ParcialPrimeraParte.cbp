@@ -31,6 +31,26 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="EntidadJugadores.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="EntidadJugadores.h" />
+		<Unit filename="entidadEquipos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="entidadEquipos.h" />
+		<Unit filename="entidadPartidos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="entidadPartidos.h" />
+		<Unit filename="entidadReferis.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="entidadReferis.h" />
+		<Unit filename="funciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

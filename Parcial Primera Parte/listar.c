@@ -2,53 +2,11 @@
 #include <stdlib.h>
 #include "funciones.h"
 #include "entidadEquipos.h"
-#include "EntidadJugadores.h"
-#include "entidadReferis.h"
 #include "entidadPartidos.h"
+#include "entidadReferis.h"
+#include "EntidadJugadores.h"
+#include "listar.h"
 #include <string.h>
-
-void subMenuListar(eEquipos[], eJugadores[], eReferi[], ePartido[], int);
-void listarJugadoresPorEquipo(eEquipos[], eJugadores[], int);
-void informarReferi(eReferi[], ePartido[], int);
-
-void menuEntidades(eEquipos equipos[], eJugadores jugadores[], eReferi referis[], ePartido partidos[], int cantidad)
-{
-    int opciones;
-    do
-    {
-        printf("\n****BIENVENIDOS****\n");
-        printf("\n1 - EQUIPOS\n2 - JUGADOERS\n3 - REFERIS\n4 - PARTIDO\n5 - LISTAR E INFORMAR\n\n");
-        scanf("%d", &opciones);
-        switch(opciones)
-        {
-        case 1:
-            system("cls");
-            subMenuEquipo(equipos, cantidad);
-            break;
-        case 2:
-            system("cls");
-            subMenuJugadores(jugadores, cantidad);
-            break;
-        case 3:
-            system("cls");
-            subMenuReferis(referis, cantidad);
-            break;
-        case 4:
-            system("cls");
-            subMenuPartidos(partidos, cantidad);
-            break;
-        case 5:
-            system("cls");
-            subMenuListar(equipos, jugadores, referis, partidos, cantidad);
-            break;
-        }
-        printf("\n\n");
-        system("pause");
-        system("cls");
-    }
-    while(opciones!=-1);
-    //FALTA INICIALIZAR EN -1 PARA MOSTRAR QUE ESTAN VACIOS
-}
 
 void subMenuListar(eEquipos equipos[], eJugadores jugadores[], eReferi referis[], ePartido partidos[], int cantidad)
 {
