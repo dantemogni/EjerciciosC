@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ParcialPrimeraParte" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ParcialPrimeraParte" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ParcialPrimeraParte" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="EntidadJugadores.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="EntidadJugadores.h" />
+		<Unit filename="entidadEquipos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="entidadEquipos.h" />
+		<Unit filename="entidadPartidos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="entidadPartidos.h" />
+		<Unit filename="entidadReferis.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="entidadReferis.h" />
+		<Unit filename="funciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones.h" />
+		<Unit filename="listar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="listar.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="validaciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="validaciones.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,153 @@
+# depslib dependency file v1.0
+1571104542 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"entidadEquipos.h"
+	"EntidadJugadores.h"
+	"entidadReferis.h"
+	"entidadPartidos.h"
+
+1571252470 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\funciones.h
+	"entidadEquipos.h"
+	"entidadPartidos.h"
+	"entidadReferis.h"
+
+1571250891 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"entidadEquipos.h"
+	"EntidadJugadores.h"
+	"entidadReferis.h"
+	"entidadPartidos.h"
+	<string.h>
+
+1571089150 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadequipos.h
+
+1571252745 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadequipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"entidadEquipos.h"
+
+1571250381 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadjugadores.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"entidadJugadores.h"
+	<string.h>
+
+1571105118 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadjugadores.h
+
+1571094670 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadreferis.h
+
+1571104542 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadreferis.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"entidadEquipos.h"
+	"EntidadJugadores.h"
+	"entidadReferis.h"
+	<string.h>
+
+1571194360 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadpartidos.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"entidadPartidos.h"
+	<string.h>
+
+1571252501 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\entidadpartidos.h
+	"funciones.h"
+
+1571104244 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte\listar.h
+
+1571252745 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia\entidadequipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"entidadEquipos.h"
+
+1571089150 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia\entidadequipos.h
+
+1571289041 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\entidadequipos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"entidadEquipos.h"
+	"validaciones.h"
+
+1571290642 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\funciones.h
+
+1571290014 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\entidadequipos.h
+
+1571290111 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\entidadjugadores.h
+
+1571290587 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\entidadreferis.h
+
+1571290352 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\entidadpartidos.h
+
+1571289041 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\entidadjugadores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"EntidadJugadores.h"
+	"validaciones.h"
+
+1571289041 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\entidadpartidos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"entidadPartidos.h"
+	"validaciones.h"
+
+1571289041 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\entidadreferis.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"entidadReferis.h"
+	"validaciones.h"
+
+1571289041 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"entidadEquipos.h"
+	"EntidadJugadores.h"
+	"entidadReferis.h"
+	"entidadPartidos.h"
+	"validaciones.h"
+
+1571289041 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"entidadEquipos.h"
+	"EntidadJugadores.h"
+	"entidadReferis.h"
+	"entidadPartidos.h"
+
+1571291804 c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\validaciones.h
+
+1571266309 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1571289041 source:c:\users\dante\documents\programacion c\ejerciciosc\parcial primera parte - copia - copia\listar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"entidadEquipos.h"
+	"EntidadJugadores.h"
+	"entidadReferis.h"
+	"entidadPartidos.h"
+
