@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1536845340 source:c:\users\alumno\desktop\clase 1309\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1536851097 source:c:\users\alumno\desktop\9\clase 1309\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1536883914 source:c:\users\carlos-pc\desktop\algo\nueva carpeta\programacion_1_laboratorio_1\programacion y laboratorio\9\clase 1309 - copia\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+
+1536884612 c:\users\carlos-pc\desktop\algo\nueva carpeta\programacion_1_laboratorio_1\programacion y laboratorio\9\clase 1309 - copia\input.h
+
+1536884567 source:c:\users\carlos-pc\desktop\algo\nueva carpeta\programacion_1_laboratorio_1\programacion y laboratorio\9\clase 1309 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+
+1536906685 source:c:\users\alumno\desktop\programacion_1_laboratorio_1-master\clase 1309 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+
+1536906685 c:\users\alumno\desktop\programacion_1_laboratorio_1-master\clase 1309 - copia\input.h
+
+1537395620 source:c:\users\carlos-pc\desktop\algo\nueva carpeta\programacion_1_laboratorio_1-master\clase 1309 - copia\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+
+1537396547 c:\users\carlos-pc\desktop\algo\nueva carpeta\programacion_1_laboratorio_1-master\clase 1309 - copia\input.h
+
+1537396547 source:c:\users\carlos-pc\desktop\algo\nueva carpeta\programacion_1_laboratorio_1-master\clase 1309 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"input.h"
+
