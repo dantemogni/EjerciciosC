@@ -1,0 +1,116 @@
+# depslib dependency file v1.0
+1561407071 source:c:\programacionlaboratorio c\parcialfinal\parcialfinal\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"linkedList.h"
+	"funcionesGet.h"
+	"controller.h"
+	"parser.h"
+	"entidad.h"
+
+1561323485 source:c:\programacionlaboratorio c\parcialfinal\parcialfinal\entidad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"entidad.h"
+	"funcionesGet.h"
+
+1561405160 source:c:\programacionlaboratorio c\parcialfinal\parcialfinal\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"linkedList.h"
+	"entidad.h"
+
+1561320727 c:\programacionlaboratorio c\parcialfinal\parcialfinal\linkedlist.h
+
+1561407104 source:c:\programacionlaboratorio c\parcialfinal\parcialfinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"linkedList.h"
+	"entidad.h"
+	"funcionesGet.h"
+	"controller.h"
+	"parser.h"
+
+1561321733 source:c:\programacionlaboratorio c\parcialfinal\parcialfinal\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1560196280 c:\programacionlaboratorio c\parcialfinal\parcialfinal\funcionesget.h
+
+1561323501 c:\programacionlaboratorio c\parcialfinal\parcialfinal\entidad.h
+
+1561324253 source:c:\programacionlaboratorio c\parcialfinal\parcialfinal\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"linkedList.h"
+	"entidad.h"
+	"parser.h"
+
+1561324370 c:\programacionlaboratorio c\parcialfinal\parcialfinal\parser.h
+
+1561407100 c:\programacionlaboratorio c\parcialfinal\parcialfinal\controller.h
+
+1561424537 source:d:\albornoz santiago\parcialfinal\parcialfinal\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"linkedList.h"
+	"funcionesGet.h"
+	"controller.h"
+	"parser.h"
+	"entidad.h"
+
+1561427695 d:\albornoz santiago\parcialfinal\parcialfinal\linkedlist.h
+	"entidad.h"
+
+1561425266 d:\albornoz santiago\parcialfinal\parcialfinal\funcionesget.h
+
+1561407102 d:\albornoz santiago\parcialfinal\parcialfinal\controller.h
+
+1561324372 d:\albornoz santiago\parcialfinal\parcialfinal\parser.h
+
+1561427652 d:\albornoz santiago\parcialfinal\parcialfinal\entidad.h
+
+1561427671 source:d:\albornoz santiago\parcialfinal\parcialfinal\entidad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"entidad.h"
+	"funcionesGet.h"
+
+1561425277 source:d:\albornoz santiago\parcialfinal\parcialfinal\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1561428006 source:d:\albornoz santiago\parcialfinal\parcialfinal\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"linkedList.h"
+	"entidad.h"
+
+1561424572 source:d:\albornoz santiago\parcialfinal\parcialfinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"linkedList.h"
+	"entidad.h"
+	"funcionesGet.h"
+	"controller.h"
+	"parser.h"
+
+1561424419 source:d:\albornoz santiago\parcialfinal\parcialfinal\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"linkedList.h"
+	"entidad.h"
+	"parser.h"
+
