@@ -1,0 +1,7 @@
+Hacer todas las funciones menos la 2.1
+
+
+Hay 3 directorios y entrar al "src" y dentro esta el proyecto "utest".
+
+Buscar el concepto de estructura autoreferenciada.
+
