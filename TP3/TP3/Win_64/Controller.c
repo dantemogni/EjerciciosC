@@ -14,6 +14,7 @@
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
     FILE* archivo = fopen(path, "r");
+    parser_EmployeeFromText(archivo,pArrayListEmployee);
     return 1;
 }
 
@@ -74,6 +75,16 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
+    int len;
+    int i;
+    Employee* aux;
+    len = ll_len(pArrayListEmployee);
+    printf("Hay %d empleados cargados...\n", len);
+    for(i=0; i<len; i++)
+    {
+        aux = (Employee*) ll_get(pArrayListEmployee,i);
+        printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
+    }
     return 1;
 }
 

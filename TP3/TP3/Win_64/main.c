@@ -26,6 +26,9 @@ int main()
     Employee* aux;
     LinkedList* listaEmpleados = ll_newLinkedList();
 
+
+    /*******************/
+    /*
     Employee* emp1 = employee_newParametros("100","Maria","10");
     //employee_setSueldo()
     emp1->sueldo = 1000;
@@ -61,7 +64,7 @@ int main()
         aux = (Employee*) ll_get(listaEmpleados,i);
         printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
     }
-
+*/
     /*******************************/
     /*
 
@@ -94,14 +97,31 @@ int main()
     }
     */
     /**************************************/
-    /* scanf("%d", &option);
      do{
+         printf("\n>> ABM EMPLEADOS\n");
+         printf("\n\t> 1 - CARGAR ARCHIVO MODO TEXTO");
+         printf("\n\t> 2 - CARGAR ARCHIVO MODO BINARIO");
+         printf("\n\t> 3 - ALTA EMPLEADO");
+         printf("\n\t> 4 - MODIFICAR EMPLEADO");
+         printf("\n\t> 5 - BAJA EMPLEADO");
+         printf("\n\t> 6 - LISTAR EMPLEADOS");
+         printf("\n\t> 7 - GUARDAR EN ARCHIVO TEXTO");
+         printf("\n\t> 8 - CARGAR ARCHIVO MODO TEXTO");
+         printf("\n\t> 9 - CARGAR ARCHIVO MODO BINARIO");
+         printf("\n\t> 10 - SALIR\n");
+         scanf("%d", &option);
          switch(option)
          {
              case 1:
+                 system("cls");
                  controller_loadFromText("data.csv",listaEmpleados);
+                 printf("\n>> ARCHIVO CARGADO CON EXITO <<\n\n"); //VALIDAR
                  break;
+             case 6:
+                system("cls");
+                controller_ListEmployee(listaEmpleados);
+                break;
          }
-     }while(option != 10);*/
+     }while(option != 10);
     return 0;
 }
