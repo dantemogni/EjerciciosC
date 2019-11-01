@@ -15,14 +15,16 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
     char id[20];
     char nombre[20];
     char horasTrabajadas[20];
+    char sueldo[20];
     Employee* emp;
-    ll_add(pArrayListEmployee,emp);
-    fscanf(pFile, "%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas); //lectura fantasma
+    fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas, sueldo); //lectura fantasma
     while(!feof(pFile))
     {
-    fscanf(pFile, "%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas);
-    ll_add(pArrayListEmployee,emp);
+    fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas, sueldo);
     emp = employee_newParametros(id,nombre,horasTrabajadas);
+    employee_setSueldo(emp, atoi(sueldo));
+    ll_add(pArrayListEmployee,emp);
+
     }
     return 1;
 }

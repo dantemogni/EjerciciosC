@@ -53,7 +53,7 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1572620041 source:c:\users\alumno\desktop\tp3\tp3\win_64\parser.c
+1572620636 source:c:\users\alumno\desktop\tp3\tp3\win_64\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -63,16 +63,18 @@
 
 1572614947 c:\users\alumno\desktop\tp3\tp3\win_64\employee.h
 
-1572619704 source:c:\users\alumno\desktop\tp3\tp3\win_64\controller.c
+1572620271 source:c:\users\alumno\desktop\tp3\tp3\win_64\controller.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 
-1572619480 source:c:\users\alumno\desktop\tp3\tp3\win_64\employee.c
+1572620841 source:c:\users\alumno\desktop\tp3\tp3\win_64\employee.c
 	"Employee.h"
+	<stdio.h>
+	<stdlib.h>
 
-1572620101 source:c:\users\alumno\desktop\tp3\tp3\win_64\main.c
+1572620271 source:c:\users\alumno\desktop\tp3\tp3\win_64\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"

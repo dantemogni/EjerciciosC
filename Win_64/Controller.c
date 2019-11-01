@@ -83,7 +83,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     for(i=0; i<len; i++)
     {
         aux = (Employee*) ll_get(pArrayListEmployee,i);
-        printf("%d--%s--%d\n", aux->id, aux->nombre, aux->horasTrabajadas);
+        printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
     }
     return 1;
 }

@@ -1,4 +1,6 @@
 #include "Employee.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 Employee* employee_new()
 {
@@ -25,5 +27,17 @@ int compararPorNombre(void* p1, void* p2)
     Employee* emp2 = (Employee*) p2;
 
     return strcmp(emp1->nombre, emp2->nombre);
+}
+
+int employee_setSueldo(Employee* this,int sueldo){
+
+    int retorno = -1;
+
+    if(this!= NULL && sueldo > 0){
+        this->sueldo = sueldo;
+        retorno = 0;
+    }
+
+    return retorno;
 }
 

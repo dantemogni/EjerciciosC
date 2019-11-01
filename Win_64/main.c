@@ -98,7 +98,7 @@ int main()
     */
     /**************************************/
      do{
-         printf(">> ABM EMPLEADOS\n");
+         printf("\n>> ABM EMPLEADOS\n");
          printf("\n\t> 1 - CARGAR ARCHIVO MODO TEXTO");
          printf("\n\t> 2 - CARGAR ARCHIVO MODO BINARIO");
          printf("\n\t> 3 - ALTA EMPLEADO");
